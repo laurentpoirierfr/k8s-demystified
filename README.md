@@ -68,7 +68,7 @@ minikube addons list
 |-----------------------------|----------|--------------|--------------------------------|
 ```
 
-## Routage static
+## Routage static
 
 ```bash
 minikube addons enable ingress
@@ -83,7 +83,7 @@ sudo vi /etc/hosts
 192.168.49.2    docs.k8s.local
 ```
 
-## Routage dynamique
+## Routage dynamique
 
 ```bash
 minikube addons enable ingress
