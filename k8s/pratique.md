@@ -29,24 +29,20 @@ spec:
         - containerPort: 80
         volumeMounts:
         - name: git-content
-          mountPath: /usr/share/nginx/html  # Nginx sert les fichiers clonés
+          mountPath: /usr/share/nginx/html # Nginx sert les fichiers clonés
 
       - name: git-sync
-        image: k8s.gcr.io/git-sync/git-sync:v3.3.1
-        env:
-        - name: GIT_SYNC_REPO
-          value: "https://github.com/laurentpoirierfr/k8s-demystified.git"  # Remplacez par l'URL de votre dépôt
-        - name: GIT_SYNC_BRANCH
-          value: "main"  # Branche que vous souhaitez synchroniser
-        - name: GIT_SYNC_ROOT
-          value: "/git"
-        - name: GIT_SYNC_DEST
-          value: "repo"  # Nom du dossier dans lequel le dépôt sera cloné
-        - name: GIT_SYNC_WAIT
-          value: "30"  # Synchronisation toutes les 30 secondes
+        image: "registry.k8s.io/git-sync/git-sync:v4.2.3"
+        args:
+        - --repo=https://github.com/laurentpoirierfr/k8s-demystified
+        - --root=/git/repo
+        - --period=60s
+        - --link=docs
+        - --max-failures=1000000000
+        - -v=2
         volumeMounts:
         - name: git-content
-          mountPath: /git/repo  # Le sidecar synchronise dans ce répertoire partagé
+          mountPath: /git/repo # Le sidecar synchronise dans ce répertoire partagé
 
       volumes:
       - name: git-content
