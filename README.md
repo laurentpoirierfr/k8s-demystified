@@ -99,6 +99,27 @@ nameserver 192.168.49.2
 search k8s.local
 ```
 
+## Minikube versionning k8s
+
+```bash
+minikube start --kubernetes-version=v1.15.0
+```
+
+
+## Minikube multi-nodes avec profil
+
+```bash
+export K8S_PROFILE=multinode-demo
+
+minikube start --nodes 3 -p $K8S_PROFILE --cpus 3 --memory 3072
+
+minikube ip -p $K8S_PROFILE
+
+minikube stop -p $K8S_PROFILE
+
+minikube delete -p $K8S_PROFILE
+```
+
 
 ## Tests
 
