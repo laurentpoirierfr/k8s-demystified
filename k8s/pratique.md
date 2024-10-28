@@ -1,6 +1,6 @@
 # Pratique
 
-Voici un exemple complet d'un déploiement Kubernetes pour un serveur Nginx avec un conteneur sidecar Git Sync pour synchroniser le contenu d'un dépôt Git, le tout exposé via un Ingress pour l'URL **https://docs.k8s.local**.
+Voici un exemple complet d'un déploiement Kubernetes pour un serveur Nginx avec un conteneur sidecar Git Sync pour synchroniser le contenu d'un dépôt Git, le tout exposé via un Ingress pour l'URL **https://docs.k8s.local/docs/public/index.html**.
 
 ## 1. Deployment avec Nginx et Git Sync sidecar
 
