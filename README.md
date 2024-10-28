@@ -9,6 +9,12 @@
 * https://github.com/mkimuram/k8sviz
 
 
+## Documentation
+
+* [Principes de base](./k8s/principes.md)
+* [Travaux pratique](./k8s/pratique.md)
+
+
 
 ## Minikube addons
 
