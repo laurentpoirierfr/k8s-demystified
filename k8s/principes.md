@@ -250,9 +250,9 @@ my-service.production.svc.cluster.local
 
 ### Cas d'usage
 
-* **Accès intra-namespace** : Depuis un Pod dans le même namespace, on peut simplement utiliser <service-name>, par exemple my-service.
+* **Accès intra-namespace** : Depuis un Pod dans le même namespace, on peut simplement utiliser <<service-name>>, par exemple my-service.
 
-* **Accès inter-namespace** : Depuis un Pod dans un autre namespace, l'URL complète <service-name>.<namespace>.svc.cluster.local est requise.
+* **Accès inter-namespace** : Depuis un Pod dans un autre namespace, l'URL complète <<service-name>>.<<namespace>>.svc.cluster.local est requise.
 
 
 ### Note sur l'Ingress
@@ -263,9 +263,3 @@ Les **Ingress** sont utilisés pour exposer des services en dehors du cluster. D
 
 
 
-
-
-
-## References
-
-* https://github.com/mkimuram/k8sviz
