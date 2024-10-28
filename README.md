@@ -68,14 +68,37 @@ minikube addons list
 |-----------------------------|----------|--------------|--------------------------------|
 ```
 
+## Routage static
+
 ```bash
 minikube addons enable ingress
-minikube addons enable ingress-dns
 
 minikube ip
 
 192.168.49.2
+
+sudo vi /etc/hosts
+
+127.0.0.1       localhost
+192.168.49.2    docs.k8s.local
 ```
+
+## Routage dynamique
+
+```bash
+minikube addons enable ingress
+minikube addons enable ingress-dns
+
+sudo vi /etc/resolv.conf 
+
+nameserver 127.0.0.53
+options edns0 trust-ad
+search .
+
+nameserver 192.168.49.2
+search k8s.local
+```
+
 
 ## Tests
 
