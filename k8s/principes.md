@@ -168,10 +168,10 @@ Dans un fichier deployment.yaml pour Kubernetes, la section resources permet de 
 
 ```yaml
     resources:
-        limits:
+      limits:
         memory: "256Mi"
         cpu: "500m"
-        requests:
+      requests:
         memory: "128Mi"
         cpu: "250m" 
 ```
