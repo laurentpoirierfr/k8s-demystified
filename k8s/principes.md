@@ -56,7 +56,9 @@ networks:
 
 ## K8s
 
-* **deployment.yaml** (Kubernetes) : Utilisé pour orchestrer et gérer des conteneurs sur un cluster de plusieurs nœuds, conçu pour la scalabilité et la résilience en production.
+### deployment.yaml (Kubernetes) : 
+
+Utilisé pour orchestrer et gérer des conteneurs sur un cluster de plusieurs nœuds, conçu pour la scalabilité et la résilience en production.
 
 
 
@@ -123,7 +125,9 @@ Le Deployment:
 * Les variables d’environnement sont configurées de manière similaire à Docker Compose.
 
 
-* **service.yaml** (Kubernetes) : Expose des Pods pour permettre l'accès au réseau, au sein du cluster (ClusterIP), ou en externe (NodePort, LoadBalancer).
+### service.yaml (Kubernetes) :
+
+Expose des Pods pour permettre l'accès au réseau, au sein du cluster (ClusterIP), ou en externe (NodePort, LoadBalancer).
 
 ```yaml
 apiVersion: v1
