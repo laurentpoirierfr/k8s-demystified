@@ -1,4 +1,4 @@
-# k9s-nexus
+# k9s-nexus
 
 ```bash
 helm repo add sonatype https://sonatype.github.io/helm3-charts/
@@ -34,7 +34,7 @@ NOTES:
 
 ```
 
-## References
+## References
 
 * https://help.sonatype.com/en/helm-repositories.html
 * https://github.com/chartmuseum/helm-push
