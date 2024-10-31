@@ -123,6 +123,8 @@ Le Deployment:
 * Les variables d’environnement sont configurées de manière similaire à Docker Compose.
 
 
+* **service.yaml** (Kubernetes) : Expose des Pods pour permettre l'accès au réseau, au sein du cluster (ClusterIP), ou en externe (NodePort, LoadBalancer).
+
 ```yaml
 apiVersion: v1
 kind: Service
