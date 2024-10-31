@@ -48,21 +48,20 @@ kubectl create ns $NAMESPACE
 
 Voici comment installer une application avec une version spécifique d'un chart depuis un dépôt Helm distant. Supposons que vous souhaitez installer une base de données MySQL avec une version de chart particulière.
 
-* 1. Ajouter le dépôt Helm distant (si ce n'est pas déjà fait). Par exemple, nous allons utiliser le dépôt stable de Helm qui contient divers charts d'applications, y compris MySQL.
+1. Ajouter le dépôt Helm distant (si ce n'est pas déjà fait). Par exemple, nous allons utiliser le dépôt stable de Helm qui contient divers charts d'applications, y compris MySQL.
 
 ```bash
 helm repo add stable https://charts.helm.sh/stable
 ```
 
-* 2. Mettre à jour les dépôts Helm pour s'assurer que vous avez la liste des versions de charts à jour.
+2. Mettre à jour les dépôts Helm pour s'assurer que vous avez la liste des versions de charts à jour.
 
 
 ```bash
 helm repo update
 ```
 
-
-* 3. Lister les versions disponibles d'un chart (par exemple mysql). Cela vous aidera à voir toutes les versions du chart et à sélectionner celle qui convient.
+3. Lister les versions disponibles d'un chart (par exemple mysql). Cela vous aidera à voir toutes les versions du chart et à sélectionner celle qui convient.
 
 ```bash
 helm search repo stable/mysql --versions
@@ -71,7 +70,7 @@ helm search repo stable/mysql --versions
 Cette commande affichera toutes les versions disponibles du chart MySQL dans le dépôt stable.
 
 
-* 4. Installer une version spécifique du chart. Supposons que vous souhaitez installer la version 1.6.9 du chart mysql.
+4. Installer une version spécifique du chart. Supposons que vous souhaitez installer la version 1.6.9 du chart mysql.
 
 ```bash
 helm install my-release stable/mysql --version 1.6.9 -n $NAMESPACE
@@ -83,7 +82,7 @@ Dans cet exemple :
 * **stable/mysql** spécifie le chart MySQL du dépôt stable.
 * **--version 1.6.9** précise la version du chart à installer.
 
-* 5.Vérifier l'installation en utilisant la commande suivante :
+5. Vérifier l'installation en utilisant la commande suivante :
 
 ```bash
 helm list -n $NAMESPACE
