@@ -7,7 +7,9 @@ Kubernetes a été développé pour répondre aux limitations de Docker Compose 
 
 ## Docker Compose
 
-* **docker-compose.yaml** : C'est un fichier conçu pour orchestrer des conteneurs Docker sur un seul hôte. Il est surtout adapté pour les environnements de développement et les petites applications.
+### docker-compose.yaml : 
+
+C'est un fichier conçu pour orchestrer des conteneurs Docker sur un seul hôte. Il est surtout adapté pour les environnements de développement et les petites applications.
 
 
 ```yaml
