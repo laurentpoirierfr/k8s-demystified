@@ -9,17 +9,6 @@
 * https://github.com/mkimuram/k8sviz
 
 
-## Documentation
-
-* [Principes de base](./k8s/principes.md)
-* [Les gestion des volumes](./k8s/volumes.md)
-* [Liste des ressources K8s](./k8s/ressources.md)
-
-## Pratique
-
-* [Travaux pratique](./k8s/pratique.md)
-* [Helm](/k8s/helm.md)
-
 ## Minikube addons
 
 ```bash
@@ -124,13 +113,13 @@ minikube stop -p $K8S_PROFILE
 minikube delete -p $K8S_PROFILE
 ```
 
+## Présentation
 
-## Tests
+* [Principes de base](./k8s/principes.md)
+* [Les gestion des volumes](./k8s/volumes.md)
+* [Liste des ressources K8s](./k8s/ressources.md)
 
+## Pratique
 
-
-```bash
-open http://localhost:8080/docs/public/index.html
-
-open https://docs.k8s.local/docs/public/index.html
-```
+* [Travaux pratique](./k8s/pratique.md)
+* [Helm](/k8s/helm.md)

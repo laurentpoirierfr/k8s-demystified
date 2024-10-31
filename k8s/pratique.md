@@ -113,3 +113,13 @@ Dans cet exemple :
 * Ingress pour exposer le service via l'URL docs.k8s.local.
 
 Assurez-vous d'ajouter docs.k8s.local au fichier /etc/hosts de votre machine (ou configurez un DNS pour le domaine) pour pouvoir y accéder depuis un navigateur, si vous travaillez localement.
+
+
+## Tests
+
+
+```bash
+open http://localhost:8080/docs/public/index.html
+
+open https://docs.k8s.local/docs/public/index.html
+```
