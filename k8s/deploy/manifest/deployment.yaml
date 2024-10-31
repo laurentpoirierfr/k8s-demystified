@@ -12,6 +12,7 @@ spec:
       labels:
         app: nginx
     spec:
+      # serviceAccountName: "nginx-git-sync-sa"
       containers:
       - name: nginx
         image: nginx:latest
