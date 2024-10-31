@@ -137,10 +137,18 @@ helm install my-release stable/mysql --version 1.6.9 -n $NAMESPACE -f mysql.valu
 ### Création d'un chart personnalisé
 
 ```bash
-cd helm-repo
+cd ./helm/charts
 helm create my-chart-demo
+
+# Génération des charts
+cd ..
+
+helm lint ./charts/*
+
+helm package ./charts/* --destination ./generated
 ```
 
+# Publication dans un dépôt de helm hosted
 
 ```bash
 # Repository url
