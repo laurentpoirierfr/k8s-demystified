@@ -134,7 +134,6 @@ Kubernetes propose plusieurs types de volumes éphémères :
 
 Comparaison Résumée
 
-| --- | --- | --- |
 | Caractéristique	| Volume	| Ephemeral Volume |
 | --- | --- | --- |
 | Durée de vie	| Variable (temporaire ou persistante)	| Limitée à celle du Pod |
