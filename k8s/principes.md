@@ -5,7 +5,7 @@
 Kubernetes a été développé pour répondre aux limitations de Docker Compose et Docker Swarm, notamment pour orchestrer des conteneurs à grande échelle et gérer des applications complexes en production. Kubernetes, inspiré de l’expérience de Google avec Borg, offre une robustesse et une flexibilité qui permettent de déployer des applications conteneurisées en toute résilience, en assurant la haute disponibilité, la scalabilité, et la portabilité entre différents environnements de cloud.
 
 
-## Compose
+## Docker Compose
 
 * **docker-compose.yaml** : C'est un fichier conçu pour orchestrer des conteneurs Docker sur un seul hôte. Il est surtout adapté pour les environnements de développement et les petites applications.
 
