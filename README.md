@@ -12,8 +12,17 @@
 ## Documentation
 
 * [Principes de base](./k8s/principes.md)
-* [Travaux pratique](./k8s/pratique.md)
+* [Les gestion des volumes](./k8s/volumes.md)
 
+## Aide mémoire
+
+* [Liste des ressources K8s](./k8s/ressources.md)
+
+* [Helm](/k8s/helm.md)
+
+## Pratique
+
+* [Travaux pratique](./k8s/pratique.md)
 
 
 ## Minikube addons
