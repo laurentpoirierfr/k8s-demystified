@@ -40,5 +40,6 @@ NOTES:
 
 ## References
 
+* https://medium.com/linux-shots/helm-chart-repository-on-sonatype-nexus-oss-fcf6f7c7498e
 * https://help.sonatype.com/en/helm-repositories.html
 * https://github.com/chartmuseum/helm-push
