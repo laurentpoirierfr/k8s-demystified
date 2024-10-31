@@ -74,7 +74,7 @@ Cette commande affichera toutes les versions disponibles du chart MySQL dans le 
 * 4. Installer une version spécifique du chart. Supposons que vous souhaitez installer la version 1.6.9 du chart mysql.
 
 ```bash
-helm install my-release stable/mysql --version 1.6.9
+helm install my-release stable/mysql --version 1.6.9 -n $NAMESPACE
 ```
 
 Dans cet exemple :
@@ -86,7 +86,7 @@ Dans cet exemple :
 * 5.Vérifier l'installation en utilisant la commande suivante :
 
 ```bash
-helm list
+helm list -n $NAMESPACE
 ```
 
 Cela affichera toutes les releases installées dans le cluster, y compris my-release, avec les informations relatives au chart et à la version.
@@ -95,10 +95,13 @@ Cela affichera toutes les releases installées dans le cluster, y compris my-rel
 ### Exemple complet
 
 ```bash
+export NAMESPACE=demo-helm
+kubectl create ns $NAMESPACE
+
 helm repo add stable https://charts.helm.sh/stable
 helm repo update
 helm search repo stable/mysql --versions
-helm install my-release stable/mysql --version 1.6.9
+helm install my-release stable/mysql --version 1.6.8 -n $NAMESPACE
 ```
 
 ### Points à noter
@@ -107,5 +110,52 @@ helm install my-release stable/mysql --version 1.6.9
 * En cas de besoin de mise à jour, vous pouvez facilement passer à une autre version du chart en utilisant : 
 
 ```bash
-helm upgrade my-release stable/mysql --version <new-version>
+helm upgrade my-release stable/mysql --version 1.6.9 -n $NAMESPACE
 ```
+
+
+
+### Utilisation réelle
+
+```bash
+export NAMESPACE=demo-helm
+kubectl create ns $NAMESPACE
+
+# Récupération du values par défaut du helm
+cd ./helm/values
+helm show values stable/mysql --version 1.6.9 > mysql.values-1.6.9.yaml
+
+# --set foo=bar --set foo=newbar
+helm install my-release stable/mysql --version 1.6.9 -n $NAMESPACE -f mysql.values-1.6.9.yaml
+```
+
+## Helm charts demo 
+
+### Pré-requis
+
+* [Installation Nexus](../helm/nexus/README.md)
+
+### Création d'un chart personnalisé
+
+```bash
+cd helm-repo
+helm create my-chart-demo
+```
+
+
+```bash
+# Repository url
+export REPO_URL=http://localhost:8081
+
+# Upload by HTTP POST
+curl -u admin:admin $REPO_URL/repository/helm-hosted/ --upload-file my-chart-demo-0.1.0.tgz -v
+
+# Using Helm Client
+helm repo add helm-hosted $REPO_URL/repository/helm-hosted/ --username admin --password admin
+helm repo add helm-proxy $REPO_URL/repository/helm-proxy/ --username admin --password admin
+
+# Search in helm-hosted
+helm search repo helm-hosted
+```
+
+
