@@ -7,6 +7,7 @@
 * https://github.com/helmfile/helmfile
 * https://k9scli.io/topics/install/
 * https://github.com/mkimuram/k8sviz
+* https://kompose.io/
 
 
 ## Minikube addons
