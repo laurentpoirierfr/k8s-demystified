@@ -41,7 +41,7 @@ Helm est souvent comparé à un "gestionnaire de paquets pour Kubernetes", ce qu
 Création d'un namespace exemple
 
 ```bash
-export NAMESPACE=exemple
+export NAMESPACE=demo-helm
 
 kubectl create ns $NAMESPACE
 ```
