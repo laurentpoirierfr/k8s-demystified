@@ -1,8 +1,10 @@
 # k9s-nexus
 
 ```bash
+# Ajout du dépot sonatype dans ma registry local
 helm repo add sonatype https://sonatype.github.io/helm3-charts/
 
+# Recherche des versions présentent dans le dépôt.
 helm search repo sonatype
 
 NAME                                    CHART VERSION   APP VERSION     DESCRIPTION                                       
@@ -15,11 +17,13 @@ sonatype/nxrm-ha                        73.0.0          3.73.0          Resilien
 sonatype/nxrm-ha-aws                    61.0.3          3.61.0          DEPRECATED Resilient AWS Deployment of Sonatype...
 sonatype/nxrm-ha-azure                  61.0.3          3.61.0          DEPRECATED Resilient Azure Deployment of Sonaty...
 
-
+# Récupération des values
 helm show values sonatype/nexus-repository-manager > values-nexus.yaml
 
+# Création d'un namespace nexus
 kubectl create ns nexus
 
+# Installlation de nexus avec le values
 helm install -f values-nexus.yaml nexus-iq sonatype/nexus-repository-manager --namespace nexus
 
 WARNING: This chart is deprecated
