@@ -1,35 +1,30 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "nginx-git-sync"
-  labels:
-    app: "nginx-git-sync"
+  name: nginx-git-sync
 spec:
   containers:
   - name: nginx
-    image: "nginx:latest"
-    resources:
-      limits:
-        cpu: 200m
-        memory: 500Mi
-      requests:
-        cpu: 100m
-        memory: 200Mi
-    env:
-    - name: DB_HOST
-      valueFrom:
-        configMapKeyRef:
-          name: MYAPP
-          key: DB_HOST
+    image: nginx:latest
     ports:
     - containerPort: 80
-      name: http
     volumeMounts:
-    - name: localtime
-      mountPath: /etc/localtime
+    - name: git-content
+      mountPath: /usr/share/nginx/html # Nginx sert les fichiers clonés
+
+  - name: git-sync
+    image: "registry.k8s.io/git-sync/git-sync:v4.2.3"
+    args:
+    - --repo=https://github.com/laurentpoirierfr/k8s-demystified
+    - --root=/git/repo
+    - --period=60s
+    - --link=docs
+    - --max-failures=1000000000
+    - -v=2
+    volumeMounts:
+    - name: git-content
+      mountPath: /git/repo # Le sidecar synchronise dans ce répertoire partagé
 
   volumes:
-  - name: localtime
-    hostPath:
-      path: /usr/share/zoneinfo/Asia/Shanghai
-  restartPolicy: Always
+  - name: git-content
+    emptyDir: {}
