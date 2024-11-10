@@ -118,8 +118,8 @@ minikube delete -p $K8S_PROFILE
 
 ## Présentation
 
-* [Compose vs Pod](./k8s/compose-vs-pod.md)
 * [Principes de base](./k8s/principes.md)
+* [Compose vs Pod](./k8s/compose-vs-pod.md)
 * [Les gestion des volumes](./k8s/volumes.md)
 * [Liste des ressources K8s](./k8s/ressources.md)
 
