@@ -173,7 +173,7 @@ helm search repo helm-hosted
 
 helm search repo helm-hosted/my-chart-demo --versions
 
-# Search proxy
+# Search in helm-proxy
 helm search repo helm-proxy
 ```
 
