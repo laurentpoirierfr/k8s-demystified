@@ -1,5 +1,7 @@
 # Helm
 
+![helm](./assets/helm.png)
+
 Helm est un outil de gestion de packages pour Kubernetes qui simplifie le déploiement, la mise à jour et la gestion d’applications dans le cluster. Helm utilise des packages appelés Charts pour regrouper toutes les ressources Kubernetes nécessaires pour une application ou un service, facilitant leur installation et leur maintenance.
 
 ## 1. Principaux concepts de Helm

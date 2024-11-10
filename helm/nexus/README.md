@@ -1,4 +1,7 @@
-# k9s-nexus
+# k8s nexus
+
+![Nexus](../../k8s/assets/sonatype-nexus-repository.jpg)
+
 
 ```bash
 # Ajout du dépot sonatype dans ma registry local
