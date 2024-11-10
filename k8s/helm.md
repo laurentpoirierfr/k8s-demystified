@@ -168,6 +168,7 @@ helm repo add helm-proxy --insecure-skip-tls-verify $REPO_URL/repository/helm-pr
 
 # Search in helm-hosted
 helm search repo helm-hosted
+helm search repo helm-proxy
 ```
 
 
