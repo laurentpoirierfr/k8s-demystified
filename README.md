@@ -1,6 +1,6 @@
 # k8s demystified
 
-![k8s](./k8s/assets/k8s.png)
+![k8s](./k8s/assets/robots.svg)
 
 ## Pré-requis
 
