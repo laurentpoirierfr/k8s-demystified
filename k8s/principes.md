@@ -1,6 +1,6 @@
 # Kubernetes
 
-![k8s](./assets/k8s.png)
+![k8s](./assets/components-of-kubernetes.svg)
 
 ## Contexte de l’émergence de Kubernetes
 
