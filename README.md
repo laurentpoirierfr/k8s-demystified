@@ -1,5 +1,7 @@
 # k8s demystified
 
+![k8s](./k8s/assets/k8s.png)
+
 ## Pré-requis
 
 * https://kubernetes.io/docs/tasks/tools/
