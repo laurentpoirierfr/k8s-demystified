@@ -153,13 +153,18 @@ helm package ./charts/* --destination ./generated
 ```bash
 # Repository url
 export REPO_URL=http://localhost:8081
+# ou bien
+export REPO_URL=https://repo.demo.local
+
+
+cd ./helm/generated
 
 # Upload by HTTP POST
-curl -u admin:admin $REPO_URL/repository/helm-hosted/ --upload-file my-chart-demo-0.1.0.tgz -v
+curl -u admin:admin $REPO_URL/repository/helm-hosted/ --upload-file my-chart-demo-0.1.0.tgz -v -k
 
 # Using Helm Client
-helm repo add helm-hosted $REPO_URL/repository/helm-hosted/ --username admin --password admin
-helm repo add helm-proxy $REPO_URL/repository/helm-proxy/ --username admin --password admin
+helm repo add helm-hosted --insecure-skip-tls-verify $REPO_URL/repository/helm-hosted/ --username admin --password admin
+helm repo add helm-proxy --insecure-skip-tls-verify $REPO_URL/repository/helm-proxy/ --username admin --password admin
 
 # Search in helm-hosted
 helm search repo helm-hosted
