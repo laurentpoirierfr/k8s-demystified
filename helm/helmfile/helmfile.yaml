@@ -1,0 +1,27 @@
+
+
+repositories:
+ - name: helm-hosted
+   url: http://localhost:8082/repository/helm-hosted/
+
+
+releases:
+- name: my-release-01
+  namespace: demo-helm
+  chart: helm-hosted/my-chart-demo
+  version: 0.1.0
+  values:
+    - ../values/my-chart-demo-values-0.1.0.yaml
+    - image:
+        repository: "nginx"
+        tag: "1.27"  
+
+- name: my-release-02
+  namespace: demo-helm
+  chart: helm-hosted/my-chart-demo
+  version: 0.1.0
+  values:
+    - ../values/my-chart-demo-values-0.1.0.yaml
+    - image:
+        repository: "traefik/whoami"
+        tag: "latest"    

@@ -82,18 +82,12 @@ tolerations: []
 affinity: {}
 
 # added in version 0.2.0
-# secret:
-#   name: secret-name
-
-# configmap:
-#   name: config-map-name
-
 env:
   normal:
     PORT: "8080"
 
-  # secret:
-  #   ENV_VAR_SECRET: "key-of-env-var-secret"
+# secret:
+#   ENV_VAR_SECRET: "key-of-env-var-secret"
 
-  # configmap:
-  #   ENV_VAR_CONFIG_MAP: "key-of-env-var-config-map"
+# configmap:
+#   ENV_VAR_CONFIG_MAP: "key-of-env-var-config-map"

@@ -60,3 +60,51 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+
+{{/*
+Ce bloc peut être inclus dans une définition de Pod pour configurer les variables d'environnement pour les conteneurs.
+
+Exemple de values.yaml  :
+
+secret:
+  name: secret-name
+
+configmap:
+  name: config-map-name
+
+env:
+  normal:
+    PORT: "8080"
+
+  secret:
+    ENV_VAR_SECRET: "key-of-env-var-secret"
+
+  configmap:
+    ENV_VAR_CONFIG_MAP: "key-of-env-var-config-map"
+    
+*/}}
+{{- define "helpers.list-env-variables"}}
+    {{- range $key, $val := .Values.env.normal }}
+    - name: {{ $key }}
+      value: {{ $val | quote }}
+    {{- end}}
+
+    {{- range $key, $val := .Values.env.secret }}
+    - name: {{ $key }}
+      valueFrom:
+        secretKeyRef:
+            name: {{ $.Values.secret.name }}
+            key: {{ $val }}
+    {{- end}}
+
+    {{- range $key, $val := .Values.env.configmap }}
+    - name: {{ $key }}
+      valueFrom:
+        configMapKeyRef:
+            name: {{ $.Values.configmap.name }}
+            key: {{ $val }}
+    {{- end}}    
+{{- end }}
+
+

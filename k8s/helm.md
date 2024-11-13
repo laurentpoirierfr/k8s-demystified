@@ -1,6 +1,7 @@
 # Helm
 
-![helm](./assets/helm.png)
+![Helm process](./assets/helm-process.png)
+
 
 Helm est un outil de gestion de packages pour Kubernetes qui simplifie le déploiement, la mise à jour et la gestion d’applications dans le cluster. Helm utilise des packages appelés Charts pour regrouper toutes les ressources Kubernetes nécessaires pour une application ou un service, facilitant leur installation et leur maintenance.
 
@@ -178,3 +179,27 @@ helm search repo helm-proxy
 ```
 
 
+```bash
+helm show values helm-hosted/my-chart-demo --version 0.1.0 > my-chart-demo-values-0.1.0.yaml
+helm show values helm-hosted/my-chart-demo --version 0.2.0 > my-chart-demo-values-0.2.0.yaml
+```
+
+
+
+
+```bash
+helm repo update
+helm search repo helm-hosted/my-chart-demo --versions
+
+
+export NAMESPACE=demo-helm
+kubectl create ns $NAMESPACE
+
+helm install my-release-01 helm-hosted/my-chart-demo --version 0.1.0 -n $NAMESPACE 
+
+helm install my-release-02 helm-hosted/my-chart-demo --version 0.1.0 -n $NAMESPACE -f my-chart-demo-values-0.1.0.yaml
+ 
+helm upgrade my-release-02 helm-hosted/my-chart-demo --version 0.1.0 -n $NAMESPACE -f my-chart-demo-values-0.1.0.yaml
+
+helm delete my-release-02 -n $NAMESPACE
+```
